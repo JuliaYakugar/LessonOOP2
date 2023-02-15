@@ -1,13 +1,10 @@
-package Less_01;
-
 import java.util.ArrayList;
 
 public class DrinkMachine extends VendingMachine{
 
     private ArrayList<Drink> drinkList;
     
-    public DrinkMachine(String firstMachine) {
-        super(firstMachine);
+    public DrinkMachine() {
         drinkList = new ArrayList<Drink>();
     }
     public void addDrink(Drink dr){

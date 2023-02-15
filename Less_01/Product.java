@@ -1,5 +1,3 @@
-package Less_01;
-
 public class Product {
 
     protected String name;
@@ -25,7 +23,7 @@ public class Product {
 
     @Override
     public String toString(){
-        return name + ": " + price;
+        return "Название: " + name + ", Цена: " + price;
     }
 
     public void consume(){
