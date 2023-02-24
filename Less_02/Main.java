@@ -36,7 +36,16 @@ public class Main {
         goodWolfs.addAnimal(new Wolf(3, 9, 4, "Черный"));
         goodWolfs.addAnimal(new Wolf(3, 9, 4, "Серый"));
 
-        System.out.println(goodWolfs.randomAnimal());
+        if (goodWolfs.getWolfs().size() > 0) {
+            System.out.println(goodWolfs.randomAnimal());
+        } else {
+            System.out.println("Клетка пустая");
+        } 
+
+        System.out.println(goodWolfs.deliverFood(30));
+        for (Wolf wolf : goodWolfs.getWolfs()) {
+            System.out.println(wolf);
+        }
 
     }
 }

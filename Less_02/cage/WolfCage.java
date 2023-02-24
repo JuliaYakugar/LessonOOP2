@@ -20,14 +20,22 @@ public class WolfCage implements AnimalCage{
 
     @Override
     public int addAnimal(Animal animal) {
-        this.wolfs.add((Wolf) animal);
-        return wolfs.size();
+        if (animal instanceof Wolf) {
+            this.wolfs.add((Wolf) animal);
+        }
+        return wolfs.size(); 
+    }
+
+    public ArrayList<Wolf> getWolfs() {
+        return this.wolfs;
     }
 
     @Override
     public String deliverFood(int weightFood) {
-        // TODO Auto-generated method stub
-        return null;
+        for (Wolf wolf : wolfs) {
+            wolf.feed(weightFood / wolfs.size());
+        }
+        return "Мы скормили - " + weightFood + "кг " + wolfs.size() + " волкам";
     }
 
     @Override
@@ -38,7 +46,12 @@ public class WolfCage implements AnimalCage{
 
     @Override
     public Animal randomAnimal() {
-        return wolfs.get(new Random().nextInt(wolfs.size()));
+        if (wolfs.size() > 0) {
+            return wolfs.get(new Random().nextInt(wolfs.size()));
+        } else {
+            return null;
+        }
+        
     }
     
 }
