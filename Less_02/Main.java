@@ -19,9 +19,10 @@ public class Main {
 
         lionAva.feed(2); 
 
-        ArrayList<Lion> lions = LionsFactory.createLions(5);
+        ArrayList<Lion> lions = LionsFactory.createLions(1);
 
         LionCage lc = new LionCage(lions);
+        
         System.out.println(lc);
         System.out.println("===========");
 
@@ -32,9 +33,9 @@ public class Main {
         System.out.println("===========");
 
         WolfCage goodWolfs = new WolfCage();
-        goodWolfs.addAnimal(new Wolf(3, 9, 4, "Белый"));
+        goodWolfs.addAnimal(new Wolf(6, 13, 4, "Белый"));
         goodWolfs.addAnimal(new Wolf(3, 9, 4, "Черный"));
-        goodWolfs.addAnimal(new Wolf(3, 9, 4, "Серый"));
+        goodWolfs.addAnimal(new Wolf(3, 7, 4, "Серый"));
 
         if (goodWolfs.getWolfs().size() > 0) {
             System.out.println(goodWolfs.randomAnimal());
@@ -46,6 +47,15 @@ public class Main {
         for (Wolf wolf : goodWolfs.getWolfs()) {
             System.out.println(wolf);
         }
+
+        System.out.println("=====lesson 3=====");
+
+        lc.addAnimal(lionAva);
+        System.out.println(lc);
+        lc.sortLions();
+        System.out.println(lc);
+        lc.sortLionsManeVolume();
+        System.out.println(lc);
 
     }
 }

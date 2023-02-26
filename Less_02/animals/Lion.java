@@ -1,6 +1,6 @@
 package Less_02.animals;
 
-public class Lion extends Animal {
+public class Lion extends Animal implements Comparable<Lion> {
 
     private int maneVolume;
     private static final int MAX_WEIGHT = 35;
@@ -15,6 +15,10 @@ public class Lion extends Animal {
         return TYPE + " -> Год рождения: " + yearBirth + ", Вес: " + weightAnimal + ", Количество конечностей: " + numberLimbs + ", Объем гривы: " + maneVolume;
     }
 
+    public int getManeVolume() {
+        return maneVolume;
+    }
+    
     @Override
     public int getMaxWeight() {
         
@@ -25,5 +29,15 @@ public class Lion extends Animal {
     public String getType() {
         return TYPE;
     }
+
+    @Override
+    public int compareTo(Lion o) {
+        if (this.yearBirth > o.yearBirth)
+            return 1;
+        else if (this.yearBirth < o.yearBirth)
+            return -1;
+        else
+            return 0;
+        }
     
 }
