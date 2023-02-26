@@ -3,7 +3,7 @@ package Less_02.animals;
 public class Wolf extends Animal {
 
     private String coatColor;
-    private static final int MAX_WEIGHT = 20;
+    private static final int MAX_WEIGHT = 40;
     private static final String TYPE = "Волк";
 
     public Wolf(int yearBirth, int weightAnimal, int numberLimbs, String coatColor) {

@@ -1,9 +1,11 @@
 package Less_02.cage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import Less_02.animals.Animal;
 import Less_02.animals.Lion;
+import Less_02.other.LionComporator;
 
 public class LionCage implements AnimalCage {
 
@@ -42,5 +44,14 @@ public class LionCage implements AnimalCage {
         // TODO Auto-generated method stub
         return null;
     }
+
+    public void sortLions() {
+        Collections.sort(lions);
+    }
+
+    public void sortLionsManeVolume() {
+        Collections.sort(lions, new LionComporator());
+    }
+    
 
 }

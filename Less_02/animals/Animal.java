@@ -11,6 +11,14 @@ public abstract class Animal {
         this.numberLimbs = numberLimbs;
     }
 
+    public int getYearBirth() {
+        return yearBirth;
+    }
+
+    public int getWeightAnimal() {
+        return weightAnimal;
+    }
+
     public void feed(int foodWeight) {
         if ((this.weightAnimal + foodWeight) <= getMaxWeight()) {
             this.weightAnimal = this.weightAnimal + foodWeight;
