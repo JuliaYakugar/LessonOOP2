@@ -2,6 +2,8 @@ package Less_02;
 
 import java.util.ArrayList;
 
+import javax.swing.text.html.HTMLDocument.Iterator;
+
 import Less_02.animals.Lion;
 import Less_02.animals.Wolf;
 import Less_02.cage.LionCage;
@@ -35,7 +37,7 @@ public class Main {
         WolfCage goodWolfs = new WolfCage();
         goodWolfs.addAnimal(new Wolf(6, 13, 4, "Белый"));
         goodWolfs.addAnimal(new Wolf(3, 9, 4, "Черный"));
-        goodWolfs.addAnimal(new Wolf(3, 7, 4, "Серый"));
+        goodWolfs.addAnimal(new Wolf(2, 9, 4, "Серый"));
 
         if (goodWolfs.getWolfs().size() > 0) {
             System.out.println(goodWolfs.randomAnimal());
@@ -57,5 +59,15 @@ public class Main {
         lc.sortLionsManeVolume();
         System.out.println(lc);
 
+        System.out.println("=====Lesson 3=====");
+        System.out.println(goodWolfs);
+        goodWolfs.sortWolfWeightAndAge();
+        System.out.println(goodWolfs);
+
+        System.out.println("======Итератор=====");
+        for (Wolf wolf : goodWolfs) {
+            System.out.println(wolf);
+        }
+        
     }
 }

@@ -1,12 +1,16 @@
 package Less_02.cage;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.Random;
 
 import Less_02.animals.Animal;
 import Less_02.animals.Wolf;
+import Less_02.other.WolfComparator;
+import Less_02.other.WolfIterator;
 
-public class WolfCage implements AnimalCage{
+public class WolfCage implements AnimalCage, Iterable<Wolf>{
 
     private ArrayList<Wolf> wolfs;
 
@@ -53,5 +57,18 @@ public class WolfCage implements AnimalCage{
         }
         
     }
+
+    @Override
+    public String toString() {
+        return "Клетка с волками -> Волки: " + wolfs;
+    }
     
+    public void sortWolfWeightAndAge() {
+        Collections.sort(wolfs, new WolfComparator());
+    }
+
+    @Override
+    public Iterator<Wolf> iterator() {
+        return new WolfIterator(wolfs);
+    }
 }
