@@ -10,7 +10,7 @@ import Less_02.animals.Wolf;
 import Less_02.other.WolfComparator;
 import Less_02.other.WolfIterator;
 
-public class WolfCage implements AnimalCage, Iterable<Wolf>{
+public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
 
     private ArrayList<Wolf> wolfs;
 
@@ -23,7 +23,7 @@ public class WolfCage implements AnimalCage, Iterable<Wolf>{
     }
 
     @Override
-    public int addAnimal(Animal animal) {
+    public int addAnimal(Wolf animal) {
         if (animal instanceof Wolf) {
             this.wolfs.add((Wolf) animal);
         }
