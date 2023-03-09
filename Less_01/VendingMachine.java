@@ -1,21 +1,21 @@
 import java.util.ArrayList;
 
-public class VendingMachine {
+public class VendingMachine<T extends Product> {
 
-    protected ArrayList<Product> productList;
+    protected ArrayList<T> productList;
 
     public VendingMachine() {
-        this.productList = new ArrayList<Product>();
+        this.productList = new ArrayList<T>();
     }
 
-    public Product getProduct(String name){
-        for (Product el: productList) {
+    public T getProduct(String name){
+        for (T el: productList) {
             if(el.getName().equals(name)) return el;
         }
         return null;
     }
 
-    public void addProduct (Product product){
+    public void addProduct (T product){
         productList.add(product);
     }
     

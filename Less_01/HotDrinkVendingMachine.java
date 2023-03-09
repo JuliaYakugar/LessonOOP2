@@ -1,15 +1,17 @@
 import java.util.ArrayList;
 
-public class HotDrinkVendingMachine extends VendingMachine{
+import javax.xml.validation.Validator;
 
-    public HotDrinkVendingMachine() {
-    }
+public class HotDrinkVendingMachine extends VendingMachine<HotDrink>{
 
-    public Product getProduct(String name, int volume, int temperature){
-        for (Product el: productList) {
-            if (el instanceof HotDrink) { 
-                HotDrink ht = (HotDrink) el;
-                if (ht.getName().equals(name) && ht.getVolume() == volume && ht.getTemperature() == temperature) return el;
+    public <T> HotDrink getHotDrink(T volume) {
+        if (volume instanceof Integer) {
+            for (HotDrink el: productList) {
+                if (el.getVolume() == (int)volume || el.getTemperature() == (int)volume) return el;
+            }
+        } else {
+            for (HotDrink el: productList) {
+                if (el.getName().equals((String)volume)) return el;
             }
         }
         return null;
