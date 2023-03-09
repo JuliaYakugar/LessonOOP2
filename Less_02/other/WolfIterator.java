@@ -9,7 +9,7 @@ public class WolfIterator implements Iterator<Wolf> {
 
     private List<Wolf> wolfs;
 
-    int index;
+    private int index;
 
     public WolfIterator(List<Wolf> wolfs) {
         this.wolfs = wolfs;

@@ -9,6 +9,7 @@ import Less_02.animals.Wolf;
 import Less_02.cage.LionCage;
 import Less_02.cage.WolfCage;
 import Less_02.factory.LionsFactory;
+import Less_02.animalUtils.AnimalUtils;
 
 public class Main {
     
@@ -68,6 +69,27 @@ public class Main {
         for (Wolf wolf : goodWolfs) {
             System.out.println(wolf);
         }
+
+        System.out.println("======Сортировка=====");
+
+        ArrayList<Wolf> badWolfs = new ArrayList<Wolf>();
+        badWolfs.add(new Wolf(6, 13, 4, "Белый"));
+        badWolfs.add(new Wolf(3, 9, 4, "Черный"));
+        badWolfs.add(new Wolf(4, 9, 4, "Серый"));
+
+        for (Wolf wolf : badWolfs) {
+            System.out.println(wolf);
+        }
+
+        AnimalUtils.sortAnimals(badWolfs);
+        System.out.println("===========");
+
+        for (Wolf wolf : badWolfs) {
+            System.out.println(wolf);
+        }
+
+        
+        
         
     }
 }

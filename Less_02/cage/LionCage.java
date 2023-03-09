@@ -7,7 +7,7 @@ import Less_02.animals.Animal;
 import Less_02.animals.Lion;
 import Less_02.other.LionComporator;
 
-public class LionCage implements AnimalCage {
+public class LionCage implements AnimalCage<Lion> {
 
     private ArrayList<Lion> lions;
 
@@ -16,7 +16,7 @@ public class LionCage implements AnimalCage {
     }
 
     @Override
-    public int addAnimal(Animal animal) {
+    public int addAnimal(Lion animal) {
         lions.add((Lion) animal);
         return lions.size();
     }
