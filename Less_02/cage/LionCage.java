@@ -40,7 +40,7 @@ public class LionCage implements AnimalCage<Lion> {
     }
 
     @Override
-    public Animal randomAnimal() {
+    public Lion randomAnimal() {
         // TODO Auto-generated method stub
         return null;
     }

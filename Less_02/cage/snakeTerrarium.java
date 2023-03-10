@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import Less_02.animals.Animal;
 import Less_02.animals.Snake;
 
-public class snakeTerrarium implements AnimalCage<Snake> {
+public class SnakeTerrarium implements AnimalCage<Snake> {
 
     private ArrayList<Snake> snakes;
 
-    public snakeTerrarium(ArrayList<Snake> snakes) {
+    public SnakeTerrarium(ArrayList<Snake> snakes) {
         this.snakes = snakes;
     }
 
-    public snakeTerrarium() {
+    public SnakeTerrarium() {
         this.snakes = new ArrayList<Snake>();
     }
 
@@ -40,7 +40,7 @@ public class snakeTerrarium implements AnimalCage<Snake> {
     }
 
     @Override
-    public Animal randomAnimal() {
+    public Snake randomAnimal() {
         // TODO Auto-generated method stub
         return null;
     }

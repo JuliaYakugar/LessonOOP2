@@ -24,9 +24,7 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
 
     @Override
     public int addAnimal(Wolf animal) {
-        if (animal instanceof Wolf) {
-            this.wolfs.add((Wolf) animal);
-        }
+        this.wolfs.add(animal);
         return wolfs.size(); 
     }
 
@@ -49,7 +47,7 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
     }
 
     @Override
-    public Animal randomAnimal() {
+    public Wolf randomAnimal() {
         if (wolfs.size() > 0) {
             return wolfs.get(new Random().nextInt(wolfs.size()));
         } else {

@@ -14,7 +14,7 @@ public interface AnimalCage<T extends Animal> {
 
     String cleanCage();
 
-    Animal randomAnimal();
+    T randomAnimal();
 
     default void sortByAge (ArrayList<T> animals) {
         Collections.sort(animals, new AnimalComporator());
