@@ -2,6 +2,7 @@ package Less_02.cage;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 import Less_02.animals.Animal;
 import Less_02.animals.Lion;
@@ -13,6 +14,10 @@ public class LionCage implements AnimalCage<Lion> {
 
     public LionCage(ArrayList<Lion> lions) {
         this.lions = lions;
+    }
+
+    public LionCage(){
+        this.lions = new ArrayList<Lion>();
     }
 
     @Override
@@ -36,13 +41,16 @@ public class LionCage implements AnimalCage<Lion> {
 
     @Override
     public String toString() {
-        return "Клетка со львами -> Львы: " + lions;
+        return "Клетка со львами -> Львы: \n" + lions;
     }
 
     @Override
-    public Animal randomAnimal() {
-        // TODO Auto-generated method stub
-        return null;
+    public Lion randomAnimal() {
+        if (lions.size() > 0) {
+            return lions.get(new Random().nextInt(lions.size()));
+        } else {
+            return null;
+        }
     }
 
     public void sortLions() {
@@ -51,6 +59,16 @@ public class LionCage implements AnimalCage<Lion> {
 
     public void sortLionsManeVolume() {
         Collections.sort(lions, new LionComporator());
+    }
+
+    @Override
+    public void deleteAnimal() {
+        this.lions.remove(randomAnimal());
+    }
+
+    @Override
+    public void createAnimal(String[] parameters) {
+        lions.add(new Lion(Integer.parseInt(parameters[2]), Integer.parseInt(parameters[3]), Integer.parseInt(parameters[4]), Integer.parseInt(parameters[5])));
     }
     
 

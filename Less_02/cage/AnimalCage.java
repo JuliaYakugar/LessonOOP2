@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import Less_02.animals.Animal;
+import Less_02.animals.Lion;
+import Less_02.animals.Wolf;
 import Less_02.other.AnimalComporator;
 
 public interface AnimalCage<T extends Animal> {
@@ -14,7 +16,11 @@ public interface AnimalCage<T extends Animal> {
 
     String cleanCage();
 
-    Animal randomAnimal();
+    T randomAnimal();
+
+    void deleteAnimal();
+
+    void createAnimal(String[] parameters);
 
     default void sortByAge (ArrayList<T> animals) {
         Collections.sort(animals, new AnimalComporator());

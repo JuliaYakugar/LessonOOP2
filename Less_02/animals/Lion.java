@@ -12,7 +12,7 @@ public class Lion extends Animal implements Comparable<Lion> {
     }
 
     public String toString(){
-        return TYPE + " -> Год рождения: " + yearBirth + ", Вес: " + weightAnimal + ", Количество конечностей: " + numberLimbs + ", Объем гривы: " + maneVolume;
+        return TYPE + " -> Год рождения: " + yearBirth + ", Вес: " + weightAnimal + ", Количество конечностей: " + numberLimbs + ", Объем гривы: " + maneVolume + "\n";
     }
 
     public int getManeVolume() {
