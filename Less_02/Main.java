@@ -9,6 +9,10 @@ import Less_02.animals.Wolf;
 import Less_02.cage.LionCage;
 import Less_02.cage.WolfCage;
 import Less_02.factory.LionsFactory;
+import Less_02.terminal.CommandExecutableFactory;
+import Less_02.terminal.CommandParser;
+import Less_02.terminal.ICommandParser;
+import Less_02.terminal.TerminalReader;
 import Less_02.animalUtils.AnimalUtils;
 
 public class Main {
@@ -88,8 +92,14 @@ public class Main {
             System.out.println(wolf);
         }
 
-        
-        
+        // System.out.println(lc);
+        // lc.deleteAnimal();
+        // System.out.println("=========");
+        // System.out.println(lc);
+        ICommandParser cp = new CommandParser();
+
+        TerminalReader tr = TerminalReader.newTerminalReader(cp);
+        tr.runReader();
         
     }
 }

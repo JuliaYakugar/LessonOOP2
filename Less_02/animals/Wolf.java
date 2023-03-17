@@ -12,7 +12,7 @@ public class Wolf extends Animal {
     }
 
     public String toString(){
-        return TYPE + " -> Год рождения: " + yearBirth + ", Вес: " + weightAnimal + ", Количество конечностей: " + numberLimbs + ", Окрас шерсти: " + coatColor;
+        return TYPE + " -> Год рождения: " + yearBirth + ", Вес: " + weightAnimal + ", Количество конечностей: " + numberLimbs + ", Окрас шерсти: " + coatColor + "\n";
     }
 
     @Override

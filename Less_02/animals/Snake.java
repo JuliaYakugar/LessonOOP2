@@ -12,7 +12,7 @@ public class Snake extends Animal{
     }
 
     public String toString(){
-        return TYPE + " -> Год рождения: " + yearBirth + ", Вес: " + weightAnimal + ", Количество конечностей: " + numberLimbs + ", Длина: " + lengthAnimal;
+        return TYPE + " -> Год рождения: " + yearBirth + ", Вес: " + weightAnimal + ", Количество конечностей: " + numberLimbs + ", Длина: " + lengthAnimal+"\n";
     }
 
 

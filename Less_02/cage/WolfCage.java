@@ -58,7 +58,7 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
 
     @Override
     public String toString() {
-        return "Клетка с волками -> Волки: " + wolfs;
+        return "Клетка с волками -> Волки: \n" + wolfs;
     }
     
     public void sortWolfWeightAndAge() {
@@ -69,4 +69,15 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
     public Iterator<Wolf> iterator() {
         return new WolfIterator(wolfs);
     }
+
+    @Override
+    public void deleteAnimal() {
+        wolfs.remove(randomAnimal());
+    }
+
+    @Override
+    public void createAnimal(String[] parameters) {
+        wolfs.add(new Wolf(Integer.parseInt(parameters[2]), Integer.parseInt(parameters[3]), Integer.parseInt(parameters[4]), parameters[5]));
+    }
+
 }
