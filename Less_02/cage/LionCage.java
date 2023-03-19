@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-import Less_02.animals.Animal;
 import Less_02.animals.Lion;
 import Less_02.other.LionComporator;
 

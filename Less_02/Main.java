@@ -2,14 +2,11 @@ package Less_02;
 
 import java.util.ArrayList;
 
-import javax.swing.text.html.HTMLDocument.Iterator;
-
 import Less_02.animals.Lion;
 import Less_02.animals.Wolf;
 import Less_02.cage.LionCage;
 import Less_02.cage.WolfCage;
 import Less_02.factory.LionsFactory;
-import Less_02.terminal.CommandExecutableFactory;
 import Less_02.terminal.CommandParser;
 import Less_02.terminal.ICommandParser;
 import Less_02.terminal.TerminalReader;

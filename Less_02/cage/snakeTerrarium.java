@@ -3,7 +3,6 @@ package Less_02.cage;
 import java.util.ArrayList;
 import java.util.Random;
 
-import Less_02.animals.Animal;
 import Less_02.animals.Snake;
 
 public class SnakeTerrarium implements AnimalCage<Snake> {

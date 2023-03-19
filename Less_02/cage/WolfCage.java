@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Random;
 
-import Less_02.animals.Animal;
 import Less_02.animals.Wolf;
 import Less_02.other.WolfComparator;
 import Less_02.other.WolfIterator;

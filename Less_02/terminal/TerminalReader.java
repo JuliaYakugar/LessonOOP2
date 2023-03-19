@@ -1,11 +1,7 @@
 package Less_02.terminal;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import Less_02.cage.LionCage;
-import Less_02.cage.SnakeTerrarium;
-import Less_02.cage.WolfCage;
 import Less_02.zoo.Zoo;
 
 public class TerminalReader {
@@ -17,12 +13,7 @@ public class TerminalReader {
     private TerminalReader(ICommandParser commandParser) {
         this.commandParser = commandParser;
 
-        WolfCage wolfCage = new WolfCage();
-        LionCage lionCage = new LionCage();
-        SnakeTerrarium snakeTerrarium = new SnakeTerrarium();
-        Zoo zoo = new Zoo(wolfCage, lionCage, snakeTerrarium);
-
-
+        Zoo zoo = new Zoo();
         factory = new CommandExecutableFactory(zoo);
     }
 
@@ -40,7 +31,8 @@ public class TerminalReader {
             String input = scanner.nextLine();
             if (input.equals("end")) break;
 
-            CommandExecutable ce = factory.create(commandParser.parseCommand(input));
+            String[] cp = commandParser.parseCommand(input);
+            CommandExecutable ce = factory.create(cp);
             ce.execute();
 
 
