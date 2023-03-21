@@ -14,7 +14,7 @@ public class TerminalReader {
         this.commandParser = commandParser;
 
         Zoo zoo = new Zoo();
-        factory = new CommandExecutableFactory(zoo);
+        factory = new CommandExecutableFactoryImpl(zoo);
     }
 
     public static TerminalReader newTerminalReader(ICommandParser commandParser) {
@@ -31,11 +31,10 @@ public class TerminalReader {
             String input = scanner.nextLine();
             if (input.equals("end")) break;
 
-            String[] cp = commandParser.parseCommand(input);
-            CommandExecutable ce = factory.create(cp);
+            Command c = commandParser.parseCommand(input);
+            CommandExecutable ce = factory.create(c);
+            System.out.println(c);
             ce.execute();
-
-
 
         }
         scanner.close();

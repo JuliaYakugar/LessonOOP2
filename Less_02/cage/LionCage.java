@@ -67,7 +67,7 @@ public class LionCage implements AnimalCage<Lion> {
 
     @Override
     public void createAnimal(String[] parameters) {
-        lions.add(new Lion(Integer.parseInt(parameters[2]), Integer.parseInt(parameters[3]), Integer.parseInt(parameters[4]), Integer.parseInt(parameters[5])));
+        lions.add(new Lion(Integer.parseInt(parameters[0]), Integer.parseInt(parameters[1]), Integer.parseInt(parameters[2]), Integer.parseInt(parameters[3])));
     }
     
 
