@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Random;
 
-import Less_02.animals.Animal;
 import Less_02.animals.Wolf;
 import Less_02.other.WolfComparator;
 import Less_02.other.WolfIterator;
@@ -42,8 +41,7 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
 
     @Override
     public String cleanCage() {
-        // TODO Auto-generated method stub
-        return null;
+        return "Клетка очищена";
     }
 
     @Override
@@ -77,7 +75,7 @@ public class WolfCage implements AnimalCage<Wolf>, Iterable<Wolf>{
 
     @Override
     public void createAnimal(String[] parameters) {
-        wolfs.add(new Wolf(Integer.parseInt(parameters[2]), Integer.parseInt(parameters[3]), Integer.parseInt(parameters[4]), parameters[5]));
+        wolfs.add(new Wolf(Integer.parseInt(parameters[0]), Integer.parseInt(parameters[1]), Integer.parseInt(parameters[2]), parameters[3]));
     }
 
 }

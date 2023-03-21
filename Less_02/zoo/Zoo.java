@@ -1,11 +1,12 @@
 package Less_02.zoo;
 
-import java.util.ArrayList;
-
 import Less_02.animals.Lion;
 import Less_02.animals.Snake;
 import Less_02.animals.Wolf;
 import Less_02.cage.AnimalCage;
+import Less_02.cage.LionCage;
+import Less_02.cage.SnakeTerrarium;
+import Less_02.cage.WolfCage;
 
 public class Zoo {
 
@@ -17,6 +18,12 @@ public class Zoo {
         this.wolfCage = wolfCage;
         this.lionCage = lionCage;
         this.snakeTerrarium = snakeTerrarium;
+    }
+
+    public Zoo() {
+        this.wolfCage = new WolfCage();
+        this.lionCage = new LionCage();
+        this.snakeTerrarium = new SnakeTerrarium();
     }
 
     public AnimalCage<Lion> getLionCage() {

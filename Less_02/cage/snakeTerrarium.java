@@ -3,7 +3,6 @@ package Less_02.cage;
 import java.util.ArrayList;
 import java.util.Random;
 
-import Less_02.animals.Animal;
 import Less_02.animals.Snake;
 
 public class SnakeTerrarium implements AnimalCage<Snake> {
@@ -24,20 +23,21 @@ public class SnakeTerrarium implements AnimalCage<Snake> {
 
     @Override
     public int addAnimal(Snake animal) {
-        // TODO Auto-generated method stub
-        return 0;
+        snakes.add((Snake) animal);
+        return snakes.size();
     }
 
     @Override
     public String deliverFood(int weightFood) {
-        // TODO Auto-generated method stub
-        return null;
+        for (Snake snake : snakes) {
+            snake.feed(weightFood / snakes.size());
+        }
+        return "Мы скормили - " + weightFood + "кг " + snakes.size() + " змеям";
     }
 
     @Override
     public String cleanCage() {
-        // TODO Auto-generated method stub
-        return null;
+        return "Клетка очищена";
     }
 
     @Override
@@ -57,7 +57,7 @@ public class SnakeTerrarium implements AnimalCage<Snake> {
 
     @Override
     public void createAnimal(String[] parameters) {
-        snakes.add(new Snake(Integer.parseInt(parameters[2]), Integer.parseInt(parameters[3]), Integer.parseInt(parameters[4]), Integer.parseInt(parameters[5])));
+        snakes.add(new Snake(Integer.parseInt(parameters[0]), Integer.parseInt(parameters[1]), Integer.parseInt(parameters[2]), Integer.parseInt(parameters[3])));
     }
 
     
